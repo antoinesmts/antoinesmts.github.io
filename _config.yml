@@ -18,6 +18,7 @@ plugins:
 ### Navbar Settings ###
 nav_exclude:                                            # The following paths are excluded from navbar
   - pages/tags.html
+  - pages/blog.html
   - pages/404.html
   - pages/index.md
   - documentation/partials/**                           # For Documentation Only
@@ -26,7 +27,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Antoine Smeets
-  image             : https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/profile-pic.png
+  image             : https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/Linkedin%20250.png
 #  behance           : your_username
 # dribbble          : your_username
 #  email             : username@domain.com
