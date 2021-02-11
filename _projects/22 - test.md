@@ -1,7 +1,7 @@
 ---
 name: Site WordPress - Tennis Padel Waremmien
 tools: [WordPress]
-image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/TC%20Waremmien.png
+image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png
 description: Réalisation d'un site WordPress pour l'OSBL du Tennis Padel Waremmien
 ---
 
