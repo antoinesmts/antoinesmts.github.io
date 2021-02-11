@@ -1,5 +1,5 @@
 ---
-name: Site WordPress - Tennis Padel Waremmien
+name: Tableau de bord - Ressources humaines
 tools: [Excel]
 image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png
 description: Réalisation d'un site WordPress pour l'OSBL du Tennis Padel Waremmien
