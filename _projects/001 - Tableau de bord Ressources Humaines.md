@@ -1,7 +1,7 @@
 ---
 name: Tableau de bord - Ressources humaines
 tools: [Excel]
-image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png
+image: https://about.fb.com/wp-content/uploads/2018/11/fb-hero-image-001.jpeg
 description: Réalisation d'un tableau de bord dynamique de ressources humaines sur Excel en utilisant la fonctionnalité des tableaux croisés.
 ---
 
