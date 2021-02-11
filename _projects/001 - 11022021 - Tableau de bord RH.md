@@ -12,8 +12,6 @@ Il est basé sur un jeu de données publié [sur Kaggle](https://www.kaggle.com/
 
 ![preview](https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH%20-%20Data%20IBM.png)
 
-<meta name="image" property="og:image" content="https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH%20-%20Data%20IBM.png">
-
 <p class="text-center">
 {% include elements/button.html link="https://1drv.ms/x/s!AmBIlKwKMNqEh8Yg8Q5Y95YpDkh3Kg?e=qDoNEl" text="Voir le fichier Excel" %}
 </p>
