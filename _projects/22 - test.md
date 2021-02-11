@@ -1,7 +1,7 @@
 ---
 name: Tableau de bord - Gestion de la qualité au sein de restaurants test
 tools: [Tableau, Python, WebHarvy]
-image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20-%20Gestion%20de%20la%20qualit%C3%A9%20au%20sein%20de%20restaurants.png
+image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png
 description: Réalisation d'un tableau de bord de gestion de la qualité de restaurants. Ce projet a été mené dans le cadre du cours MET8417 (Gestion des opérations) de l'UQAM à l'hiver 2020.
 ---
 
@@ -9,7 +9,7 @@ description: Réalisation d'un tableau de bord de gestion de la qualité de rest
 
 Le projet a été mené dans le cadre du cours MET8417 (Gestion des opérations) de l'UQAM à l'hiver 2020. Il fût réalisé au sujet d'une chaîne de restaurants montréalaise. Il a été anonymisé lors de sa publication en ligne afin de ne pas publier les données internes de l'entreprise utilisées. Le résultat final est disponible en bas de la page.
 
-![preview](https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20-%20Gestion%20de%20la%20qualit%C3%A9%20au%20sein%20de%20restaurants.png)
+![preview](https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png)
 
 ## Méthode
 
