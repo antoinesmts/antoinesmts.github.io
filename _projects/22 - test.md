@@ -1,16 +1,17 @@
 ---
-name: Tableau de bord - Ressources humaines
-tools: [Excel]
-image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/Tableau%20de%20bord%20RH.png
-description: Réalisation d'un tableau de bord dynamique de ressources humaines sur Excel en utilisant la fonctionnalité des tableaux croisés.
+name: Site WordPress - Tennis Padel Waremmien
+tools: [WordPress]
+image: https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/TC%20Waremmien.png
+description: Réalisation d'un site WordPress pour l'OSBL du Tennis Padel Waremmien
 ---
 
-# Tableau de bord - Ressources humaines
+# Site du Tennis Padel Waremmien
 
-Réalisation d'un tableau de bord dynamique de ressources humaines sur Excel en utilisant la fonctionnalité des tableaux croisés.
-Il est basé sur un jeu de données publié [sur Kaggle](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset).
+![preview](https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/TC%20Waremmien.png)
 
+- Installation et configuration de la plateform WordPress pour le compte du Tennis Padel Waremmien
+- Création du thème (HTML/CSS/PHP/Photoshop)
 
 <p class="text-center">
-{% include elements/button.html link="https://1drv.ms/x/s!AmBIlKwKMNqEh8Yg8Q5Y95YpDkh3Kg?e=qDoNEl" text="Voir le fichier Excel" %}
+{% include elements/button.html link="https://tcwaremmien.be/" text="Voir le projet" %}
 </p>
