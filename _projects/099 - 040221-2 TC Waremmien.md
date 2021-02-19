@@ -9,7 +9,7 @@ description: Réalisation d'un site WordPress pour l'OSBL du Tennis Padel Waremm
 
 ![preview](https://raw.githubusercontent.com/antoinesmts/antoinesmts.github.io/main/_projects/Images/TC%20Waremmien.png)
 
-- Installation et configuration de la plateform WordPress pour le compte du Tennis Padel Waremmien
+- Installation et configuration de la plateform WordPress pour le compte du Tennis Padel Waremmien (Belgique)
 - Création du thème (HTML/CSS/PHP/Photoshop)
 
 <p class="text-center">
