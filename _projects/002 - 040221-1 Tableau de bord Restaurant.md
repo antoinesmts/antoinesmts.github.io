@@ -19,7 +19,7 @@ Le logiciel de récupération des données WebHarvy a été utilisé afin de ré
 * Réalisation d’une analyse d’opinion avec l’algorithme Vader. Chaque commentaire se voit attribuer un score sur une échelle de -1 à 1. Afin de faciliter l’analyse, ils ont été organisés en trois catégories : négatif (-1 ≤ score < -0.2), neutre (-0.2 ≤ score ≤ 0.2), positif (0.2 < score ≤ 1).
 * Enregistrement des données dans une base de données MySQL.
 
-Le tableau de bord a ensuite été créé en connectant le logiciel Tableau à la base de données:
+Le tableau de bord a ensuite été créé en connectant le logiciel Tableau à la base de données.
 
 Le tableau de bord de gestion de la qualité met en avant plusieurs indicateurs: score sur Google Maps, score NPS et résultats de l’invité mystère (données internes à l'entreprise supprimées lors de la mise en ligne du projet). Ce tableau de bord intéractif pourrait permettre aux gestionnaires d'une entreprise de réaliser une veille des commentaires publiés sur les réseaux sociaux et permet une analyse plus approfondie des raisons derrières les notes des clients.
 
