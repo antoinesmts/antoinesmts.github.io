@@ -2,9 +2,9 @@
 title: Vibe coding d'un portfolio automatisé avec markdown et GitHub Actions
 slug: portfolio
 description: >
-  Portfolio web automatisé développé avec HTML/CSS/JS, synchronisant automatiquement les projets via fichiers markdown et GitHub Actions pour un déploiement FTP sans CMS.
+  Portfolio web automatisé développé avec HTML/CSS/JS, synchronisant automatiquement les projets via fichiers markdown et GitHub Actions pour une publication GitHub Pages sans CMS.
 excerpt: >
-  Portfolio web automatisé avec synchronisation markdown et GitHub Actions pour déploiement FTP sans CMS...
+  Portfolio web automatisé avec synchronisation markdown et GitHub Actions pour publication GitHub Pages sans CMS...
 hero_image: ../images/projets/portfolio/0_portfolio.png
 date: 2025-08-01
 status: published
@@ -18,7 +18,7 @@ tech_stack:
   - JavaScript
   - GitHub Actions
   - Markdown
-  - FTP
+  - GitHub Pages
   - Trae IDE
   - Claude Sonnet 3.7
   - VS Code
@@ -36,9 +36,9 @@ La gestion traditionnelle de portfolio avec des CMS comme Wordpress présente de
 
 ## Solution développée
 
-J'ai développé une architecture portfolio statique combinant HTML, CSS et JavaScript avec une automatisation complète via GitHub Actions. La solution élimine toute dépendance aux CMS traditionnels en utilisant des fichiers markdown pour le contenu des projets. Chaque push vers le dépôt GitHub déclenche automatiquement la reconstruction du site et le déploiement FTP, créant un workflow de maintenance minimale tout en garantissant des mises à jour instantanées.
+J'ai développé une architecture portfolio statique combinant HTML, CSS et JavaScript avec une automatisation complète via GitHub Actions. La solution élimine toute dépendance aux CMS traditionnels en utilisant des fichiers markdown pour le contenu des projets. Chaque push vers le dépôt GitHub déclenche automatiquement la reconstruction du site et la publication sur GitHub Pages, créant un workflow de maintenance minimale tout en garantissant des mises à jour instantanées.
 
-L'avantage réside dans l'intégration fluide entre la simplicité du markdown, la puissance de GitHub Actions, et le déploiement FTP direct, surpassant les solutions CMS plus lourdes et moins flexibles.
+L'avantage réside dans l'intégration fluide entre la simplicité du markdown, la puissance de GitHub Actions, et l'hébergement statique natif de GitHub Pages, surpassant les solutions CMS plus lourdes et moins flexibles.
 
 ## Architecture et technologies
 
@@ -46,11 +46,11 @@ L'avantage réside dans l'intégration fluide entre la simplicité du markdown, 
 
 **Gestion de contenu** : Fichiers markdown structurés avec métadonnées YAML pour chaque projet, permettant une organisation claire et une maintenance simplifiée.
 
-**Automatisation** : GitHub Actions avec workflow YAML personnalisé pour la conversion markdown → HTML, le build du site et le déploiement FTP automatisé.
+**Automatisation** : GitHub Actions avec workflow YAML personnalisé pour la conversion markdown → HTML, le build du site et la publication GitHub Pages automatisée.
 
 **Environnements de développement** : Trae IDE avec Claude Sonnet 3.7 pour le vibe coding initial, puis migration vers VS Code avec Claude Code pour le debugging avancé et l'optimisation.
 
-**Déploiement** : Intégration FTP sécurisée via GitHub Actions, permettant un déploiement instantané sans intervention manuelle.
+**Déploiement** : Publication statique sur GitHub Pages via GitHub Actions, permettant un déploiement instantané sans intervention manuelle.
 
 ## Résultats et bénéfices
 

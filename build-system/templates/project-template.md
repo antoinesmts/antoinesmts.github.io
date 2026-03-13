@@ -40,7 +40,7 @@ tech_stack:                              # Optional: technologies used
 # === SEO OPTIMIZATION ===
 seo_title: "Titre SEO personnalisé (50-60 caractères)"  # Optional: custom SEO title
 seo_description: "Description SEO personnalisée"        # Optional: falls back to description
-canonical_url: "https://antoinesmeets.com/projets/nom-du-projet"  # Optional: auto-generated
+canonical_url: "https://votre-domaine.fr/projets/nom-du-projet"  # Optional: auto-generated
 keywords:                                # Optional: SEO keywords
   - "automatisation"
   - "python"
@@ -79,7 +79,7 @@ documentation_url: "https://docs.example.com"             # Optional: documentat
 # === LOCALIZATION ===
 language: "fr"                           # Optional: content language (default: fr)
 alternate_languages:                     # Optional: alternate language versions
-  en: "https://antoinesmeets.com/en/projects/project-name"
+  en: "https://votre-domaine.fr/en/projects/project-name"
 ---
 
 # Nom du Projet

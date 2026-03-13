@@ -129,7 +129,7 @@ seo_description: "Description personnalisée pour SEO et réseaux sociaux"
 # Défaut : Utilise description
 # Recommandation : 150-160 caractères
 
-canonical_url: "https://antoinesmeets.com/projets/mon-nouveau-projet"
+canonical_url: "https://votre-domaine.fr/projets/mon-nouveau-projet"
 # Description : URL canonique du projet
 # Format : URL complète
 # Auto-génération : Basé sur slug si absent

@@ -13,10 +13,11 @@ const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
 const { format } = require('date-fns');
 const { fr } = require('date-fns/locale');
+const { getBaseUrl } = require('./site-url');
 
 class MarkdownParser {
   constructor(options = {}) {
-    this.baseUrl = options.baseUrl || 'https://antoinesmeets.com';
+    this.baseUrl = getBaseUrl(options.baseUrl);
     this.defaultLanguage = options.language || 'fr';
 
     // Initialize markdown processor

@@ -25,6 +25,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 const { format } = require('date-fns');
 const { fr } = require('date-fns/locale');
+const { getBaseUrl } = require('./lib/site-url');
 
 // Configuration
 const config = {
@@ -32,7 +33,7 @@ const config = {
   outputDir: path.join(__dirname, '../'),
   templatesDir: path.join(__dirname, 'templates'),
   assetsDir: path.join(__dirname, '../images'),
-  baseUrl: 'https://antoinesmeets.com'
+  baseUrl: getBaseUrl()
 };
 
 // Initialize markdown processor

@@ -64,12 +64,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const SITE_BASE_PATH = getSiteBasePath();
+
+function getSiteBasePath() {
+    const script = document.querySelector('script[src$="js/main.js"]');
+
+    if (!script) {
+        return '/';
+    }
+
+    const scriptUrl = new URL(script.getAttribute('src'), window.location.href);
+    const basePath = scriptUrl.pathname.replace(/js\/main\.js$/, '');
+
+    return basePath.endsWith('/') ? basePath : `${basePath}/`;
+}
+
+function buildSiteUrl(relativePath = '') {
+    const normalizedPath = relativePath
+        .replace(/^\.?\//, '')
+        .replace(/^(\.\.\/)+/, '');
+
+    return `${SITE_BASE_PATH}${normalizedPath}`.replace(/\/+/g, '/');
+}
+
+function resolveProjectImagePath(imagePath) {
+    if (!imagePath) {
+        return buildSiteUrl('images/default-project.jpg');
+    }
+
+    if (/^https?:\/\//i.test(imagePath)) {
+        return imagePath;
+    }
+
+    return buildSiteUrl(imagePath);
+}
+
 // Fonction pour charger les projets avec gestion d'erreurs améliorée
 async function loadProjects() {
     const projectsContainer = document.getElementById('projects-container');
 
     try {
-        const response = await fetch('projets/index.json');
+        const response = await fetch(buildSiteUrl('projets/index.json'));
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -120,7 +155,7 @@ function createProjectCard(project) {
     imageContainer.className = 'project-image';
     
     const img = document.createElement('img');
-    img.src = project.image;
+    img.src = resolveProjectImagePath(project.image);
     img.alt = project.title;
     img.loading = 'lazy';
     imageContainer.appendChild(img);
@@ -153,7 +188,7 @@ function createProjectCard(project) {
     content.appendChild(description);
     
     const link = document.createElement('a');
-    link.href = 'projets/' + project.url;
+    link.href = buildSiteUrl(`projets/${project.url}/`);
     link.className = 'btn primary';
     link.textContent = 'Voir le projet';
     content.appendChild(link);
@@ -203,7 +238,7 @@ function loadRelatedProjects() {
     const currentTags = Array.from(document.querySelectorAll('.project-tag')).map(tag => tag.textContent.trim());
     
     // Load projects data with better error handling
-    fetch('projets/index.json')
+    fetch(buildSiteUrl('projets/index.json'))
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -221,7 +256,7 @@ function loadRelatedProjects() {
             relatedContainer.innerHTML = relatedProjects.map(project => `
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="${project.image || '/images/default-project.jpg'}" alt="${project.title}" loading="lazy">
+                        <img src="${resolveProjectImagePath(project.image)}" alt="${project.title}" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>${project.title}</h3>
@@ -229,7 +264,7 @@ function loadRelatedProjects() {
                         <div class="project-tags">
                             ${project.tags ? project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('') : ''}
                         </div>
-                        <a href="/${project.url}" class="btn btn-primary">Voir le projet</a>
+                        <a href="${buildSiteUrl(`projets/${project.url}/`)}" class="btn btn-primary">Voir le projet</a>
                     </div>
                 </div>
             `).join('');

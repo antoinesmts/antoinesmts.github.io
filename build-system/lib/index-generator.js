@@ -12,12 +12,13 @@ const chalk = require('chalk');
 const { format, parseISO } = require('date-fns');
 const { fr } = require('date-fns/locale');
 const MarkdownParser = require('./markdown-parser');
+const { getBaseUrl } = require('./site-url');
 
 class IndexGenerator {
   constructor(options = {}) {
     this.projectsDir = options.projectsDir || path.join(__dirname, '../../projets');
     this.outputFile = options.outputFile || path.join(this.projectsDir, 'index.json');
-    this.baseUrl = options.baseUrl || 'https://antoinesmeets.com';
+    this.baseUrl = getBaseUrl(options.baseUrl);
     this.parser = new MarkdownParser({ baseUrl: this.baseUrl });
 
     this.projects = [];

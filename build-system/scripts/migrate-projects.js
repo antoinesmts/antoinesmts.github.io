@@ -22,6 +22,7 @@ const matter = require('gray-matter');
 const chalk = require('chalk');
 const ora = require('ora');
 const slugify = require('slugify');
+const { getBaseUrl } = require('../lib/site-url');
 
 class ProjectMigrator {
   constructor() {
@@ -158,6 +159,8 @@ class ProjectMigrator {
   }
 
   enhanceFrontmatter(existing, indexData, slug) {
+    const baseUrl = getBaseUrl();
+
     const enhanced = {
       // Basic Information
       title: existing.title || indexData?.title || 'Untitled Project',
@@ -180,7 +183,7 @@ class ProjectMigrator {
 
       // SEO (auto-generated for now, can be customized later)
       seo_title: existing.seo_title || null, // Will be auto-generated
-      canonical_url: `https://antoinesmeets.com/projets/${slug}`,
+      canonical_url: `${baseUrl}/projets/${slug}`,
 
       // Schema.org
       schema_type: this.inferSchemaType(existing.categories || indexData?.categories || []),

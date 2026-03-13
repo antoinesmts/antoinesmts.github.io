@@ -5,16 +5,24 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 env:
   NODE_ENV: production
+  BASE_URL: ${{ vars.SITE_URL }}
+  CNAME_DOMAIN: ${{ vars.CNAME_DOMAIN }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +39,9 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Setup GitHub Pages
+      uses: actions/configure-pages@v5
+
     - name: Install build system dependencies
       run: |
         cd build-system
@@ -46,22 +57,10 @@ jobs:
       run: |
         node .github/scripts/build-production.js
 
-    - name: Deploy to FTP (Production only)
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./_site/
-        server-dir: ${{ secrets.FTP_SERVER_DIR }}/
-        dry-run: false
-        exclude: |
-          **/.git/**
-          **/node_modules/**
-          **/build-system/**
-          **/*.log
-          **/.DS_Store
+        path: ./_site
 
     - name: Upload build artifacts
       if: always()
@@ -73,3 +72,16 @@ jobs:
           seo-report.json
           projets/validation-report.json
         retention-days: 30
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

@@ -12,12 +12,13 @@ const chalk = require('chalk');
 const { format, parseISO } = require('date-fns');
 const { fr } = require('date-fns/locale');
 const MarkdownParser = require('./markdown-parser');
+const { getBaseUrl } = require('./site-url');
 
 class TemplateEngine {
   constructor(options = {}) {
     this.templatesDir = options.templatesDir || path.join(__dirname, '../templates');
     this.outputDir = options.outputDir || path.join(__dirname, '../../projets');
-    this.baseUrl = options.baseUrl || 'https://antoinesmeets.com';
+    this.baseUrl = getBaseUrl(options.baseUrl);
     this.parser = new MarkdownParser({ baseUrl: this.baseUrl });
 
     // Register Handlebars helpers

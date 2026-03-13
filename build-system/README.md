@@ -85,7 +85,7 @@ tech_stack: ["Python", "FastAPI", "Docker"]
 
 # SEO Enhancement (optional - auto-generated if not provided)
 seo_title: "Custom SEO Title"
-canonical_url: "https://antoinesmeets.com/projets/project-slug"
+canonical_url: "https://votre-domaine.fr/projets/project-slug"
 keywords: ["automation", "python", "ai"]
 
 # Social Media (optional - auto-generated if not provided)
@@ -202,18 +202,15 @@ The migration script automatically:
 ### Environment Variables
 ```bash
 NODE_ENV=production    # Skip draft projects in production builds
-BASE_URL=https://antoinesmeets.com  # Your site URL
+BASE_URL=https://votre-domaine.fr   # Public site URL used for canonical links and sitemap
+CNAME_DOMAIN=votre-domaine.fr       # Optional: custom domain written to _site/CNAME in CI
 ```
 
 ### Build Configuration
-Edit `build.js` configuration object:
-```javascript
-const config = {
-  projectsDir: path.join(__dirname, '../projets'),
-  outputDir: path.join(__dirname, '../'),
-  templatesDir: path.join(__dirname, 'templates'),
-  baseUrl: 'https://antoinesmeets.com'
-};
+The build system reads `BASE_URL` automatically. If it is not defined in CI, it falls back to the GitHub Pages URL of the repository.
+
+```bash
+BASE_URL=https://smeets.dev npm run build
 ```
 
 ## Troubleshooting

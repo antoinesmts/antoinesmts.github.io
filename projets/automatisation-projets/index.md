@@ -50,7 +50,7 @@ Le système s'appuie sur une architecture modulaire organisée autour de plusieu
 
 **Optimisation visuelle** : Nano Banana API pour le traitement et l'optimisation automatique des arrière-plans d'images
 
-**Publication et déploiement** : GitHub Actions avec workflow personnalisé filtrant les commits récents pour éviter les recompilations inutiles, et déploiement FTP automatisé
+**Publication et déploiement** : GitHub Actions avec workflow personnalisé filtrant les commits récents pour éviter les recompilations inutiles, et publication automatisée sur GitHub Pages
 
 L'intégration de ces technologies permet un flux de travail linéaire depuis la saisie humaine jusqu'à la publication finale, avec des points de contrôle à chaque étape critique.
 

@@ -9,10 +9,11 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const { format } = require('date-fns');
+const { getBaseUrl } = require('./site-url');
 
 class SEOOptimizer {
   constructor(options = {}) {
-    this.baseUrl = options.baseUrl || 'https://antoinesmeets.com';
+    this.baseUrl = getBaseUrl(options.baseUrl);
     this.outputDir = options.outputDir || path.join(__dirname, '../../');
     this.language = options.language || 'fr';
 

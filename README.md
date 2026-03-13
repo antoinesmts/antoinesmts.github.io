@@ -104,27 +104,31 @@ npm run migrate
 
 ## 🚢 Déploiement
 
-### Déploiement automatique (GitHub Actions)
+### Déploiement automatique (GitHub Pages)
 
-Le site se déploie automatiquement sur push vers `main`.
+Le site est buildé et publié automatiquement sur GitHub Pages à chaque push sur `main`.
 
-**Configuration des secrets** :
-1. Aller dans Settings → Secrets → Actions
-2. Ajouter :
-   - `FTP_SERVER` : adresse du serveur FTP
-   - `FTP_USERNAME` : nom d'utilisateur
-   - `FTP_PASSWORD` : mot de passe
-   - `FTP_SERVER_DIR` : répertoire de destination
+**Configuration GitHub** :
+1. Aller dans `Settings` → `Pages`
+2. Dans `Build and deployment`, sélectionner `GitHub Actions`
+3. Optionnel : ajouter dans `Settings` → `Secrets and variables` → `Actions` les variables suivantes :
+    - `SITE_URL` : URL publique finale du site, par exemple `https://smeets.dev`
+    - `CNAME_DOMAIN` : domaine personnalisé à écrire dans le fichier `CNAME`, par exemple `smeets.dev`
+
+Si `SITE_URL` n'est pas définie, le workflow utilise automatiquement l'URL GitHub Pages par défaut du dépôt.
 
 ### Déploiement manuel
 
 ```bash
-# 1. Build de production
+# 1. Installer les dépendances du build system
 cd build-system
-npm run build
+npm install
+cd ..
 
-# 2. Le site généré est dans _site/
-# 3. Déployer _site/ sur votre hébergement
+# 2. Générer le build de production complet
+NODE_ENV=production node .github/scripts/build-production.js
+
+# 3. Le site prêt à publier est dans _site/
 ```
 
 ## 📝 Frontmatter complet

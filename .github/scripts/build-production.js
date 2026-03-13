@@ -196,6 +196,10 @@ class ProductionBuilder {
     // Create output directory
     await fsExtra.ensureDir(this.outputDir);
 
+    // Disable Jekyll processing on GitHub Pages
+    await fs.writeFile(path.join(this.outputDir, '.nojekyll'), '');
+    console.log('   ✅ Created .nojekyll');
+
     // Copy main site files
     const staticFiles = [
       'index.html',
@@ -239,6 +243,12 @@ class ProductionBuilder {
         await fsExtra.copy(sourcePath, targetPath);
         console.log(`   ✅ Copied ${file}`);
       }
+    }
+
+    const cnameDomain = (process.env.CNAME_DOMAIN || '').trim();
+    if (cnameDomain) {
+      await fs.writeFile(path.join(this.outputDir, 'CNAME'), `${cnameDomain}\n`, 'utf-8');
+      console.log(`   ✅ Created CNAME for ${cnameDomain}`);
     }
 
     console.log(colors.green('   ✅ Deployment preparation completed'));
