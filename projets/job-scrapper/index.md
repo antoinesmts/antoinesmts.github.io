@@ -2,7 +2,7 @@
 title: Automatisation de la veille des offres d'emploi
 slug: job-scrapper
 description: >
-  Solution complète d'automatisation de veille d'emploi intégrant n8n, scraping multi-sources, IA de scoring personnalisé, base SQL et application no-code pour une gestion optimisée des offres.
+  Automatisation complète de veille d'emploi avec n8n, scraping multi-sources, scoring IA et application no-code pour gérer les offres pertinentes.
 excerpt: >
   Système automatisé de collecte et scoring d'offres d'emploi via IA, n8n et application no-code pour une veille personnalisée...
 hero_image: ../images/projets/job-scrapper/0_job-scrapper-n8n.png
@@ -47,15 +47,19 @@ L'architecture technique s'articule autour de plusieurs composants clés :
 - **API custom** : Flask pour exposer le scraper Python en API REST
 - **Containerisation** : Docker et GitHub Actions pour l'automatisation du déploiement
 
-![Interface Flutterflow](../../images/projets/job-scrapper/1_job-scrapper-app.png)
 
 La seconde version, développée suite à l'arrêt d'APIFY, démontre la robustesse de l'architecture avec une transition transparente vers une solution de scraping maison.
+
+![Workflow](../../images/projets/job-scrapper/2_job-scrapper-n8n-workflow.png)
+
 
 ## Résultats et bénéfices
 
 Le système livre quotidiennement des offres d'emploi résumées et scorées selon des critères personnalisés. Chaque offre inclut les outils demandés, tâches principales, salaire et avantages sociaux. Le scoring IA (0-100) permet une priorisation immédiate des opportunités les plus pertinentes. L'application no-code offre une visualisation claire et une gestion simplifiée des recherches, tandis que les notifications KChat assurent une veille proactive sans effort.
 
 La base SQL Supabase permet l'historisation complète des offres et l'analyse évolutive des tendances du marché. L'automatisation via n8n garantit une collecte fiable et un traitement cohérent des données.
+
+![Interface Flutterflow](../../images/projets/job-scrapper/1_job-scrapper-app.png)
 
 ## Évolutions envisagées
 

@@ -55,7 +55,7 @@ class ProjectValidator {
       spinner.succeed(chalk.green(`✅ Validation completed for ${projectFolders.length} projects`));
 
       this.generateReport();
-      this.printSummary();
+      return this.printSummary();
 
     } catch (error) {
       spinner.fail(chalk.red('❌ Validation failed'));
@@ -334,6 +334,11 @@ class ProjectValidator {
   }
 
   isValidDate(dateString) {
+    // Handle Date objects (gray-matter auto-parses YYYY-MM-DD dates)
+    if (dateString instanceof Date) {
+      return !isNaN(dateString.getTime());
+    }
+    // Handle string format
     const regex = /^\d{4}-\d{2}-\d{2}$/;
     return regex.test(dateString) && !isNaN(Date.parse(dateString));
   }

@@ -54,6 +54,8 @@ Le système s'appuie sur une architecture modulaire organisée autour de plusieu
 
 L'intégration de ces technologies permet un flux de travail linéaire depuis la saisie humaine jusqu'à la publication finale, avec des points de contrôle à chaque étape critique.
 
+![Workflow n8n](../../images/projets/automatisation-projets/2_projets_n8n_workflow.png)
+
 ## Résultats et bénéfices
 
 L'implémentation de ce pipeline automatisé a permis d'atteindre plusieurs objectifs clés :

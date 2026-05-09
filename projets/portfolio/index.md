@@ -1,8 +1,8 @@
 ---
-title: Vibe coding d'un portfolio automatisé avec markdown et GitHub Actions
+title: Portfolio automatisé avec markdown et GitHub Actions
 slug: portfolio
 description: >
-  Portfolio web automatisé développé avec HTML/CSS/JS, synchronisant automatiquement les projets via fichiers markdown et GitHub Actions pour une publication GitHub Pages sans CMS.
+  Portfolio web automatisé avec HTML/CSS/JS, synchronisant les projets via markdown et GitHub Actions pour publication GitHub Pages.
 excerpt: >
   Portfolio web automatisé avec synchronisation markdown et GitHub Actions pour publication GitHub Pages sans CMS...
 hero_image: ../images/projets/portfolio/0_portfolio.png

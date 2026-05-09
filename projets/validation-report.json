@@ -1,0 +1,104 @@
+{
+  "generated": "2026-05-09T15:47:02.224Z",
+  "summary": {
+    "totalProjects": 4,
+    "errors": 0,
+    "warnings": 0,
+    "suggestions": 11
+  },
+  "projects": [
+    {
+      "name": "scraping-avis-google",
+      "status": "published",
+      "wordCount": 517,
+      "hasHeroImage": true,
+      "categoryCount": 2,
+      "descriptionLength": 127
+    },
+    {
+      "name": "portfolio",
+      "status": "published",
+      "wordCount": 362,
+      "hasHeroImage": true,
+      "categoryCount": 1,
+      "descriptionLength": 131
+    },
+    {
+      "name": "job-scrapper",
+      "status": "published",
+      "wordCount": 422,
+      "hasHeroImage": true,
+      "categoryCount": 3,
+      "descriptionLength": 146
+    },
+    {
+      "name": "automatisation-projets",
+      "status": "published",
+      "wordCount": 589,
+      "hasHeroImage": true,
+      "categoryCount": 3,
+      "descriptionLength": 159
+    }
+  ],
+  "issues": {
+    "errors": [],
+    "warnings": [],
+    "suggestions": [
+      {
+        "project": "scraping-avis-google",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/scraping-avis-google/1_N8N-Airtable-Review-scrapper.png"
+      },
+      {
+        "project": "scraping-avis-google",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/scraping-avis-google/2_N8N-Scrapper-Part-1.png"
+      },
+      {
+        "project": "scraping-avis-google",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/scraping-avis-google/3_N8N-Scrapper-Part-2.png"
+      },
+      {
+        "project": "scraping-avis-google",
+        "type": "social_suggestion",
+        "message": "Consider adding Open Graph/Twitter fields for better social sharing"
+      },
+      {
+        "project": "portfolio",
+        "type": "social_suggestion",
+        "message": "Consider adding Open Graph/Twitter fields for better social sharing"
+      },
+      {
+        "project": "job-scrapper",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/job-scrapper/2_job-scrapper-n8n-workflow.png"
+      },
+      {
+        "project": "job-scrapper",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/job-scrapper/1_job-scrapper-app.png"
+      },
+      {
+        "project": "job-scrapper",
+        "type": "social_suggestion",
+        "message": "Consider adding Open Graph/Twitter fields for better social sharing"
+      },
+      {
+        "project": "automatisation-projets",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/automatisation-projets/1_interface_airtable.png"
+      },
+      {
+        "project": "automatisation-projets",
+        "type": "suggestion",
+        "message": "Consider verifying local link: ../../images/projets/automatisation-projets/2_projets_n8n_workflow.png"
+      },
+      {
+        "project": "automatisation-projets",
+        "type": "social_suggestion",
+        "message": "Consider adding Open Graph/Twitter fields for better social sharing"
+      }
+    ]
+  }
+}

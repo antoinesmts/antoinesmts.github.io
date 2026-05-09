@@ -2,7 +2,7 @@
 title: Scraping et stockage d'avis Google avec n8n
 slug: scraping-avis-google
 description: >
-  Solution d'automatisation n8n pour récupérer quotidiennement les avis Google de multiples établissements via DataforSEO, avec interface Airtable et base de données Supabase
+  Automatisation n8n pour récupérer les avis Google via DataforSEO, gérer les propriétés dans Airtable et stocker dans Supabase.
 excerpt: >
   Automatisation complète avec n8n pour récupérer les avis Google via DataforSEO, gérer les propriétés dans Airtable et stocker dans Supabase...
 hero_image: ../images/projets/scraping-avis-google/0_Avis-Google-N8N.png
