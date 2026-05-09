@@ -161,7 +161,7 @@ function createProjectCard(project) {
     imageContainer.appendChild(img);
     
     const tagsContainer = document.createElement('div');
-    tagsContainer.className = 'project-tags';
+    tagsContainer.className = 'project-card-tags';
     
     project.categories.forEach(category => {
         const tag = document.createElement('span');
@@ -170,8 +170,8 @@ function createProjectCard(project) {
         tagsContainer.appendChild(tag);
     });
     
-    imageContainer.appendChild(tagsContainer);
     card.appendChild(imageContainer);
+    card.appendChild(tagsContainer);
     
     const content = document.createElement('div');
     content.className = 'project-content';
