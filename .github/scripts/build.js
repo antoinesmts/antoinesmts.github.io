@@ -11,6 +11,7 @@ const templateDir = path.join(__dirname, '../../templates');
 // Créer le répertoire de sortie s'il n'existe pas
 fs.ensureDirSync(outputDir);
 fs.ensureDirSync(path.join(outputDir, 'projets'));
+fs.ensureDirSync(path.join(outputDir, 'experience-graph'));
 
 // Copier les fichiers statiques
 fs.copySync(path.join(__dirname, '../../index.html'), path.join(outputDir, 'index.html'));
@@ -33,6 +34,18 @@ if (fs.existsSync(path.join(__dirname, '../../images'))) {
   fs.ensureDirSync(path.join(outputDir, 'images'));
   fs.copySync(path.join(__dirname, '../../images'), path.join(outputDir, 'images'));
   console.log('Dossier images copié avec succès!');
+}
+
+if (fs.existsSync(path.join(__dirname, '../../confidentialite'))) {
+  fs.ensureDirSync(path.join(outputDir, 'confidentialite'));
+  fs.copySync(path.join(__dirname, '../../confidentialite'), path.join(outputDir, 'confidentialite'));
+  console.log('Dossier confidentialite copié avec succès!');
+}
+
+if (fs.existsSync(path.join(__dirname, '../../experience-graph'))) {
+  fs.ensureDirSync(path.join(outputDir, 'experience-graph'));
+  fs.copySync(path.join(__dirname, '../../experience-graph'), path.join(outputDir, 'experience-graph'));
+  console.log('Dossier experience-graph copié avec succès!');
 }
 
 // Initialiser le parser Markdown

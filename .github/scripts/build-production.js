@@ -204,6 +204,7 @@ class ProductionBuilder {
     const staticFiles = [
       'index.html',
       'confidentialite/',
+      'experience-graph/',
       'css/',
       'js/',
       'images/'

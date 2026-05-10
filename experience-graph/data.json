@@ -1,0 +1,269 @@
+{
+  "experiences": [
+    {
+      "id": "falia",
+      "label": "Falia",
+      "role": "Analyste de données et responsable d'équipe",
+      "summary": "Combinaison de leadership d'équipe, d'analyse de données et de développement technique pour propulser la croissance de clients variés à travers des stratégies marketing numériques mesurables."
+    },
+    {
+      "id": "germain-hotels",
+      "label": "Germain Hôtels",
+      "role": "Spécialiste plateformes numériques",
+      "summary": "Pilotage de l'écosystème et l'infrastructure analytique du marketing numérique pour optimiser les performances et améliorer la prise de décision basée sur les données."
+    },
+    {
+      "id": "bofu",
+      "label": "Bofu",
+      "role": "Directeur technologie, automatisation et IA",
+      "summary": "Développement de workflows automatisés, structuration de données et intégration d'agents IA."
+    },
+    {
+      "id": "auto-apprentissage",
+      "label": "Auto-apprentissage",
+      "role": "Formation continue",
+      "summary": "Développement de compétences en Python, automatisation et projets personnels."
+    }
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python"
+    },
+    {
+      "id": "power-bi",
+      "label": "Power BI"
+    },
+    {
+      "id": "looker-studio",
+      "label": "Looker Studio"
+    },
+    {
+      "id": "n8n",
+      "label": "n8n"
+    },
+    {
+      "id": "power-automate",
+      "label": "Power Automate"
+    },
+    {
+      "id": "sql",
+      "label": "SQL"
+    },
+    {
+      "id": "snowflake",
+      "label": "Snowflake"
+    },
+    {
+      "id": "bigquery",
+      "label": "BigQuery"
+    },
+    {
+      "id": "hubspot",
+      "label": "HubSpot"
+    },
+    {
+      "id": "activecampaign",
+      "label": "ActiveCampaign"
+    },
+    {
+      "id": "microsoft-dynamics",
+      "label": "Microsoft Dynamics"
+    }
+  ],
+  "projects": [
+    {
+      "id": "falia-reporting-marketing",
+      "label": "Reporting marketing multi-sources",
+      "experience": "falia",
+      "technologies": [
+        "looker-studio"
+      ],
+      "summary": "Conception de tableaux de bord Looker Studio intégrant plusieurs sources de données marketing, CRM et ventes.",
+      "impact": "Centralisation de la performance marketing et meilleure identification des leviers d'optimisation."
+    },
+    {
+      "id": "falia-pipelines-python",
+      "label": "Pipelines Python vers BigQuery",
+      "experience": "falia",
+      "technologies": [
+        "python",
+        "bigquery", 
+        "looker-studio",
+        "sql"
+      ],
+      "summary": "Développement de scripts Python pour extraire, transformer et centraliser automatiquement les données de différentes sources dans BigQuery, préparation de la donnée en SQL afin de permettre une visualisation efficace dans Looker Studio.",
+      "impact": "Réduction du travail manuel et amélioration de la fiabilité des données utilisées en reporting."
+    },
+    {
+      "id": "falia-crm-automatisation",
+      "label": "CRM & automatisations marketing",
+      "experience": "falia",
+      "technologies": [
+        "hubspot",
+        "activecampaign"
+      ],
+      "summary": "Implémentation de CRM et conception d'automatisations marketing et ventes.",
+      "impact": "Unification des données clients et optimisation des processus commerciaux."
+    },
+    {
+      "id": "germain-dashboard-marketing",
+      "label": "Tableau de bord marketing Power BI",
+      "experience": "germain-hotels",
+      "technologies": [
+        "power-bi"
+      ],
+      "summary": "Conception d'un tableau de bord à destination de l'équipe de marketing numérique afin de transformer les données de Google Analytics en insights actionnables.",
+      "impact": "Meilleur suivi des campagnes numériques et support à la prise de décision."
+    },
+    {
+      "id": "germain-analyses",
+      "label": "Analyses SQL & Python",
+      "experience": "germain-hotels",
+      "technologies": [
+        "sql",
+        "python",
+        "snowflake"
+      ],
+      "summary": "Analyses de données combinant SQL, Snowflake et Python pour répondre à des questions métier et éclairer les décisions marketing.",
+      "impact": "Clarification d'enjeux data et amélioration de la qualité des analyses business."
+    },
+    {
+      "id": "germain-automatisation-reporting",
+      "label": "Automatisation de reporting multi-sources",
+      "experience": "germain-hotels",
+      "technologies": [
+        "power-automate",
+        "python",
+        "excel",
+        "power-bi"
+      ],
+      "summary": "Développement de workflows afin d'automatiser la consolidation de données multi-sources permettant de consolider la donnée dans Excel et dans Power BI selon les besoins.",
+      "impact": "Réduction des manipulations manuelles et fiabilisation des processus récurrents."
+    },
+    {
+      "id": "germain-crm-dynamics",
+      "label": "Intégration CRM Microsoft Dynamics",
+      "experience": "germain-hotels",
+      "technologies": [
+        "microsoft-dynamics"
+      ],
+      "summary": "Contribution au déploiement du CRM via le nettoyage, l'intégration et la structuration des données.",
+      "impact": "Amélioration de la qualité et de la fiabilité des données CRM."
+    },
+    {
+      "id": "bofu-workflows-n8n",
+      "label": "Workflows automatisés n8n",
+      "experience": "bofu",
+      "technologies": [
+        "n8n"
+      ],
+      "summary": "Développement de workflows automatisés pour éliminer les tâches répétitives et fluidifier les processus métier.",
+      "impact": "Gain d'efficacité opérationnelle et réduction du travail manuel."
+    },
+    {
+      "id": "bofu-data",
+      "label": "Architecture de données",
+      "experience": "bofu",
+      "technologies": [
+        "n8n",
+        "SQL"
+      ],
+      "summary": "Mise en place d'une base de données Supabase permettant de centraliser et d'optimiser l'accès aux données.",
+      "impact": "Meilleure exploitation de l'information interne."
+    },
+    {
+      "id": "bofu-looker-studio",
+      "label": "Tableaux de bord Looker Studio",
+      "experience": "bofu",
+      "technologies": [
+        "n8n",
+        "SQL",
+        "looker-studio"
+      ],
+      "summary": "Mise en place de tableaux de bord Looker Studio pour visualiser les données centralisées dans Supabase et faciliter la prise de décision.",
+      "impact": "Meilleure exploitation de l'information."
+    },
+    {
+      "id": "bofu-python-scripts",
+      "label": "Scripts Python permettant l'exportation, le nettoyage et l'importation de données au sein de différentes plateformes.",
+      "experience": "bofu",
+      "technologies": [
+        "n8n",
+        "python"
+      ],
+      "summary": "Création de scripts Python pour automatiser l'exportation, le nettoyage et l'importation de données entre différentes plateformes, notamment WordPress et Shoopify via les APIs.",
+      "impact": "Gain de temps significatif et amélioration de la qualité des données importées."
+    },
+        {
+      "id": "bofu-pipelines-n8n",
+      "label": "Pipelines de données n8n",
+      "experience": "bofu",
+      "technologies": [
+        "n8n",
+        "sql"
+      ],
+      "summary": "Création de pipelines n8n pour automatiser l'extraction de données de diverses API (Plateformes publitaires, HubSpot) et l'importation de données nettoyées dans une base de données Supabase.",
+      "impact": "Intégration personnalisée et automatisée des données évitant une dépendance à des outils tiers et permettant une meilleure maîtrise de l'infrastructure de données."
+    },
+     {
+      "id": "bofu-crm-automatisation",
+      "label": "CRM & automatisations marketing",
+      "experience": "bofu",
+      "technologies": [
+        "hubspot"
+      ],
+      "summary": "Implémentation de CRM, avec importation de données via API et conception d'automatisations marketing et ventes.",
+      "impact": "Gain de temps dans la mise en place des CRM, unification des données clients et optimisation des processus commerciaux."
+    },
+  {
+    "id": "website-project-publication-automation",
+    "label": "Automatisation de la publication de projets sur le site web",
+    "experience": "auto-apprentissage",
+    "technologies": [
+      "n8n",
+      "python",
+      "github",
+      "AI"
+    ],
+    "summary": "Conception d'un pipeline automatisé permettant de générer, enrichir et publier des projets sur un portfolio statique avec validation humaine.",
+    "impact": "Réduction du travail manuel lié à la publication de contenu et amélioration de la cohérence visuelle et éditoriale du portfolio.",
+  },
+  {
+    "id": "google-review-scraping-storage",
+    "label": "Scraping et stockage d'avis Google avec n8n",
+    "experience": "auto-apprentissage",
+    "technologies": [
+      "n8n",
+      "python",
+      "postgresql"
+    ],
+    "summary": "Création d'un système automatisé de collecte, traitement et stockage d'avis Google pour centraliser les données clients.",
+    "impact": "Centralisation automatisée des avis clients et création d'une base exploitable pour l'analyse et le suivi de la réputation.",
+  },
+  {
+    "id": "job-monitoring-automation",
+    "label": "Automatisation de la veille des offres d'emploi",
+    "experience": "auto-apprentissage",
+    "technologies": [
+      "n8n",
+      "python"
+    ],
+    "summary": "Développement d'un système automatisé de veille d'offres d'emploi pour centraliser et filtrer des opportunités provenant de plusieurs sources.",
+    "impact": "Gain de temps dans la recherche d'emploi et amélioration du suivi des opportunités pertinentes.",
+  },
+  {
+    "id": "automated-markdown-portfolio",
+    "label": "Portfolio automatisé avec Markdown et GitHub Actions",
+    "experience": "auto-apprentissage",
+    "technologies": [
+      "github",
+      "markdown",
+      "AI",
+      "HTML"
+    ],
+    "summary": "Création d'un portfolio statique automatisé basé sur des fichiers Markdown et un pipeline GitHub Actions.",
+    "impact": "Simplification de la maintenance du portfolio et automatisation complète du déploiement du contenu.",
+  }
+  ]
+}
