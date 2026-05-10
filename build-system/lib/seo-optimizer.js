@@ -100,6 +100,13 @@ class SEOOptimizer {
       priority: '0.6'
     });
 
+    urls.push({
+      loc: `${this.baseUrl}/confidentialite/`,
+      lastmod: format(new Date(), 'yyyy-MM-dd'),
+      changefreq: 'yearly',
+      priority: '0.4'
+    });
+
     // Add project pages
     projectsData
       .filter(project => project.status === 'published')

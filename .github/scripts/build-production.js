@@ -203,6 +203,7 @@ class ProductionBuilder {
     // Copy main site files
     const staticFiles = [
       'index.html',
+      'confidentialite/',
       'css/',
       'js/',
       'images/'
@@ -260,6 +261,7 @@ class ProductionBuilder {
     // Check essential files
     const requiredFiles = [
       'index.html',
+      'confidentialite/index.html',
       'css/style.css',
       'js/main.js',
       'projets/index.json'
