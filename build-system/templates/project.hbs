@@ -146,11 +146,8 @@
                         {{/if}}
                     </div>
 
-                    {{#if (or tags tech_stack)}}
-                    <div class="project-tags" role="list" aria-label="Technologies utilisées">
-                        {{#each tech_stack}}
-                        <span class="project-tag tech-tag" role="listitem" itemprop="programmingLanguage">{{this}}</span>
-                        {{/each}}
+                    {{#if tags}}
+                    <div class="project-tags" role="list" aria-label="Tags du projet">
                         {{#each tags}}
                         <span class="project-tag" role="listitem" itemprop="keywords">{{this}}</span>
                         {{/each}}
