@@ -975,6 +975,21 @@ def compose_page(network_html: str, data: dict) -> str:
         }});
       }}
 
+      function freezeGraphAfterStabilization() {{
+        if (typeof network === 'undefined') {{
+          return;
+        }}
+
+        network.once('stabilizationIterationsDone', function() {{
+          network.setOptions({{
+            physics: false
+          }});
+          network.fit({{
+            animation: false
+          }});
+        }});
+      }}
+
       function watchThemeChanges() {{
         var observer = new MutationObserver(applyGraphTheme);
         observer.observe(document.body, {{ attributes: true, attributeFilter: ['data-theme'] }});
@@ -984,6 +999,7 @@ def compose_page(network_html: str, data: dict) -> str:
         renderDefaultPanel();
         applyGraphTheme();
         bindPanelInteractions();
+        freezeGraphAfterStabilization();
         watchThemeChanges();
       }}
 
