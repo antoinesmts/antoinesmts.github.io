@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links li');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectsContainer = document.getElementById('projects-container');
+
+    initializeCookieConsent();
     
     // Check for saved theme preference or default to 'light' mode
     const currentTheme = localStorage.getItem('theme') || 
@@ -44,25 +46,191 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Chargement des projets depuis les fichiers Markdown
-    loadProjects();
+    if (projectsContainer) {
+        loadProjects();
+    }
 
     // Filtrage des projets
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Retirer la classe active de tous les boutons et mettre à jour ARIA
-            filterBtns.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons et mettre à jour ARIA
+                filterBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                // Ajouter la classe active au bouton cliqué et mettre à jour ARIA
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                
+                const filter = btn.getAttribute('data-filter');
+                filterProjects(filter);
             });
-            // Ajouter la classe active au bouton cliqué et mettre à jour ARIA
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-            
-            const filter = btn.getAttribute('data-filter');
-            filterProjects(filter);
+        });
+    }
+});
+
+const ANALYTICS_SCRIPT_SRC = 'https://analytics.smeets.dev/js/pa-lwwvb78rTzKZGLUFUogUQ.js';
+const ANALYTICS_CONSENT_KEY = 'plausible_analytics_consent';
+const ANALYTICS_CONSENT_TTL_MS = 60 * 24 * 60 * 60 * 1000;
+const COOKIE_BANNER_ID = 'cookie-consent-banner';
+const COOKIE_SETTINGS_TRIGGER_SELECTOR = '[data-cookie-settings-trigger]';
+
+function initializeCookieConsent() {
+    bindCookieSettingsTriggers();
+
+    const consent = getStoredAnalyticsConsent();
+
+    if (consent === 'accepted') {
+        loadPlausibleAnalytics();
+        return;
+    }
+
+    if (consent === 'refused') {
+        hideCookieBanner();
+        return;
+    }
+
+    // Do not show banner if user closed it during this session
+    const sessionDismissed = typeof sessionStorage !== 'undefined' && sessionStorage.getItem('plausible_analytics_banner_dismissed') === 'true';
+    if (!sessionDismissed) {
+        showCookieBanner();
+    }
+}
+
+function getStoredAnalyticsConsent() {
+    try {
+        const rawValue = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+
+        if (!rawValue) {
+            return null;
+        }
+
+        const parsedValue = JSON.parse(rawValue);
+
+        if (!parsedValue || typeof parsedValue.expiresAt !== 'number' || Date.now() > parsedValue.expiresAt) {
+            localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+            return null;
+        }
+
+        return parsedValue.value === 'accepted' || parsedValue.value === 'refused' ? parsedValue.value : null;
+    } catch (error) {
+        console.warn('Impossible de lire la préférence de consentement:', error);
+        return null;
+    }
+}
+
+function storeAnalyticsConsent(value) {
+    try {
+        localStorage.setItem(ANALYTICS_CONSENT_KEY, JSON.stringify({
+            value,
+            expiresAt: Date.now() + ANALYTICS_CONSENT_TTL_MS
+        }));
+    } catch (error) {
+        console.warn('Impossible d’enregistrer la préférence de consentement:', error);
+    }
+}
+
+function loadPlausibleAnalytics() {
+    if (window.__plausibleAnalyticsLoaded) {
+        return;
+    }
+
+    window.plausible = window.plausible || function() {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+    window.plausible.init = window.plausible.init || function(options) {
+        window.plausible.o = options || {};
+    };
+
+    if (!document.querySelector(`script[src="${ANALYTICS_SCRIPT_SRC}"]`)) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = ANALYTICS_SCRIPT_SRC;
+        document.head.appendChild(script);
+    }
+
+    window.plausible.init();
+    window.__plausibleAnalyticsLoaded = true;
+}
+
+function bindCookieSettingsTriggers() {
+    document.querySelectorAll(COOKIE_SETTINGS_TRIGGER_SELECTOR).forEach(trigger => {
+        trigger.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Force showing banner even if it was dismissed for this session
+            showCookieBanner({ force: true });
         });
     });
-});
+}
+
+function showCookieBanner() {
+    let banner = document.getElementById(COOKIE_BANNER_ID);
+
+    if (!banner) {
+        banner = document.createElement('div');
+        banner.id = COOKIE_BANNER_ID;
+        banner.className = 'cookie-consent-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-live', 'polite');
+        banner.setAttribute('aria-label', 'Consentement aux statistiques');
+        banner.innerHTML = `
+            <div class="cookie-consent-message">
+                <p>Ce site utilise Plausible Analytics pour mesurer l’audience de manière respectueuse de la vie privée. Les statistiques sont anonymisées, auto-hébergées et utilisées uniquement afin d’améliorer le contenu et les performances du site.</p>
+            </div>
+            <button type="button" class="cookie-consent-close" aria-label="Fermer la bannière">×</button>
+            <div class="cookie-consent-actions">
+                <button type="button" class="btn primary cookie-consent-btn" data-cookie-consent-action="accept">Accepter</button>
+                <button type="button" class="btn primary cookie-consent-btn" data-cookie-consent-action="refuse">Refuser</button>
+            </div>
+        `;
+
+        banner.querySelector('[data-cookie-consent-action="accept"]').addEventListener('click', () => {
+            storeAnalyticsConsent('accepted');
+            hideCookieBanner();
+            loadPlausibleAnalytics();
+        });
+
+        banner.querySelector('[data-cookie-consent-action="refuse"]').addEventListener('click', () => {
+            storeAnalyticsConsent('refused');
+            hideCookieBanner();
+        });
+
+        // Close button: hide for this session only (no consent stored)
+        const closeBtn = banner.querySelector('.cookie-consent-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                try {
+                    if (typeof sessionStorage !== 'undefined') {
+                        sessionStorage.setItem('plausible_analytics_banner_dismissed', 'true');
+                    }
+                } catch (e) {
+                    // ignore
+                }
+                hideCookieBanner();
+            });
+        }
+
+        document.body.appendChild(banner);
+    }
+
+    // Accept force option to reopen even if session-dismissed
+    const force = typeof arguments[0] === 'object' && arguments[0].force === true;
+    if (!force) {
+        const sessionDismissed = typeof sessionStorage !== 'undefined' && sessionStorage.getItem('plausible_analytics_banner_dismissed') === 'true';
+        if (sessionDismissed) return;
+    }
+
+    banner.hidden = false;
+}
+
+function hideCookieBanner() {
+    const banner = document.getElementById(COOKIE_BANNER_ID);
+
+    if (banner) {
+        banner.hidden = true;
+    }
+}
 
 const SITE_BASE_PATH = getSiteBasePath();
 
