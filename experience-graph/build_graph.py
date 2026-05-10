@@ -73,6 +73,72 @@ DARK_EDGE_STYLES = {
     "default": {"color": "rgba(148, 163, 184, 0.6)", "width": 1.4, "dashes": False},
 }
 
+GRAPH_OPTIONS = {
+    "autoResize": True,
+    "interaction": {
+        "hover": False,
+        "hoverConnectedEdges": False,
+        "navigationButtons": False,
+        "keyboard": False,
+    },
+    "physics": {
+        "enabled": True,
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": True,
+            "iterations": 1400,
+            "updateInterval": 50,
+        },
+        "forceAtlas2Based": {
+            "gravitationalConstant": -90,
+            "centralGravity": 0.015,
+            "springLength": 210,
+            "springConstant": 0.055,
+            "damping": 0.72,
+            "avoidOverlap": 1,
+        },
+        "barnesHut": {
+            "gravitationalConstant": -7000,
+            "centralGravity": 0.12,
+            "springLength": 210,
+            "springConstant": 0.028,
+            "damping": 0.9,
+            "avoidOverlap": 1,
+        },
+    },
+    "layout": {
+        "improvedLayout": True,
+        "randomSeed": 42,
+    },
+    "nodes": {
+        "borderWidth": 2,
+        "borderWidthSelected": 3,
+        "font": {
+            "face": "Inter,Segoe UI,sans-serif",
+            "size": 16,
+            "strokeWidth": 0,
+        },
+        "margin": 14,
+        "shadow": {
+            "enabled": True,
+            "color": "rgba(15, 23, 42, 0.12)",
+            "size": 22,
+            "x": 0,
+            "y": 10,
+        },
+    },
+    "edges": {
+        "color": {"inherit": False},
+        "smooth": {
+            "enabled": True,
+            "type": "cubicBezier",
+            "roundness": 0.28,
+        },
+        "selectionWidth": 2.2,
+        "hoverWidth": 1.4,
+    },
+}
+
 
 def load_data(path: Path) -> dict:
     with path.open(encoding="utf-8") as handle:
@@ -210,67 +276,7 @@ def create_network(graph: nx.Graph) -> Network:
         cdn_resources="in_line",
     )
 
-    network.set_options(
-        """
-        const options = {
-          "autoResize": true,
-          "interaction": {
-            "hover": false,
-            "hoverConnectedEdges": false,
-            "navigationButtons": false,
-            "keyboard": false
-          },
-          "physics": {
-            "enabled": true,
-            "stabilization": {
-              "enabled": true,
-              "iterations": 1000,
-              "updateInterval": 50
-            },
-            "barnesHut": {
-              "gravitationalConstant": -5200,
-              "centralGravity": 0.22,
-              "springLength": 160,
-              "springConstant": 0.035,
-              "damping": 0.9,
-              "avoidOverlap": 0.5
-            }
-          },
-          "layout": {
-            "improvedLayout": true,
-            "randomSeed": 42
-          },
-          "nodes": {
-            "borderWidth": 2,
-            "borderWidthSelected": 3,
-            "font": {
-              "face": "Inter, Segoe UI, sans-serif",
-              "size": 16,
-              "strokeWidth": 0
-            },
-            "shadow": {
-              "enabled": true,
-              "color": "rgba(15, 23, 42, 0.12)",
-              "size": 22,
-              "x": 0,
-              "y": 10
-            }
-          },
-          "edges": {
-            "color": {
-              "inherit": false
-            },
-            "smooth": {
-              "enabled": true,
-              "type": "cubicBezier",
-              "roundness": 0.28
-            },
-            "selectionWidth": 2.2,
-            "hoverWidth": 1.4
-          }
-        }
-        """
-    )
+    network.set_options(json.dumps(GRAPH_OPTIONS, ensure_ascii=False))
 
     for node_id, attrs in graph.nodes(data=True):
         entity_type = attrs["entity_type"]
@@ -327,6 +333,13 @@ def sanitize_body_content(body_content: str) -> str:
     sanitized = re.sub(r'<div class="card"\s+style="width:\s*100%">', '<div class="experience-network-inner">', sanitized, flags=re.IGNORECASE)
     sanitized = re.sub(r'<div id="mynetwork"\s+class="card-body"></div>', '<div id="mynetwork" class="experience-network-canvas"></div>', sanitized, flags=re.IGNORECASE)
     sanitized = re.sub(r"</div>\s*</div>\s*<script type=\"text/javascript\">", '</div>\n\n        <script type="text/javascript">', sanitized, count=1, flags=re.IGNORECASE)
+    sanitized = re.sub(
+        r"var options = \{.*?\};",
+        "var options = " + json.dumps(GRAPH_OPTIONS, ensure_ascii=False) + ";",
+        sanitized,
+        count=1,
+        flags=re.DOTALL,
+    )
     return sanitized.strip()
 
 
