@@ -228,7 +228,7 @@ function hideCookieBanner() {
     const banner = document.getElementById(COOKIE_BANNER_ID);
 
     if (banner) {
-        banner.hidden = true;
+        banner.remove();
     }
 }
 
