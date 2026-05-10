@@ -186,14 +186,14 @@ function showCookieBanner() {
         `;
 
         banner.querySelector('[data-cookie-consent-action="accept"]').addEventListener('click', () => {
-            storeAnalyticsConsent('accepted');
             hideCookieBanner();
+            storeAnalyticsConsent('accepted');
             loadPlausibleAnalytics();
         });
 
         banner.querySelector('[data-cookie-consent-action="refuse"]').addEventListener('click', () => {
-            storeAnalyticsConsent('refused');
             hideCookieBanner();
+            storeAnalyticsConsent('refused');
         });
 
         // Close button: hide for this session only (no consent stored)
