@@ -39,6 +39,19 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install experience graph dependencies
+      run: |
+        pip install -r experience-graph/requirements.txt
+
+    - name: Generate experience graph
+      run: |
+        python experience-graph/build_graph.py
+
     - name: Setup GitHub Pages
       uses: actions/configure-pages@v5
 
