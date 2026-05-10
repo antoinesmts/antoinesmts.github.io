@@ -227,7 +227,7 @@
       "AI"
     ],
     "summary": "Conception d'un pipeline automatisé permettant de générer, enrichir et publier des projets sur un portfolio statique avec validation humaine.",
-    "impact": "Réduction du travail manuel lié à la publication de contenu et amélioration de la cohérence visuelle et éditoriale du portfolio.",
+    "impact": "Réduction du travail manuel lié à la publication de contenu et amélioration de la cohérence visuelle et éditoriale du portfolio."
   },
   {
     "id": "google-review-scraping-storage",
@@ -239,7 +239,7 @@
       "postgresql"
     ],
     "summary": "Création d'un système automatisé de collecte, traitement et stockage d'avis Google pour centraliser les données clients.",
-    "impact": "Centralisation automatisée des avis clients et création d'une base exploitable pour l'analyse et le suivi de la réputation.",
+    "impact": "Centralisation automatisée des avis clients et création d'une base exploitable pour l'analyse et le suivi de la réputation."
   },
   {
     "id": "job-monitoring-automation",
@@ -250,7 +250,7 @@
       "python"
     ],
     "summary": "Développement d'un système automatisé de veille d'offres d'emploi pour centraliser et filtrer des opportunités provenant de plusieurs sources.",
-    "impact": "Gain de temps dans la recherche d'emploi et amélioration du suivi des opportunités pertinentes.",
+    "impact": "Gain de temps dans la recherche d'emploi et amélioration du suivi des opportunités pertinentes."
   },
   {
     "id": "automated-markdown-portfolio",
@@ -263,7 +263,7 @@
       "HTML"
     ],
     "summary": "Création d'un portfolio statique automatisé basé sur des fichiers Markdown et un pipeline GitHub Actions.",
-    "impact": "Simplification de la maintenance du portfolio et automatisation complète du déploiement du contenu.",
+    "impact": "Simplification de la maintenance du portfolio et automatisation complète du déploiement du contenu."
   }
   ]
 }
