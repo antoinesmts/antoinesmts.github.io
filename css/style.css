@@ -1022,7 +1022,102 @@ footer {
     color: #ffffff;
 }
 
-.tag-power-bi {
+.tag-ia {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-n8n {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-airtable {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-css {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-claude-code {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-claude-sonnet-37 {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-dataforseo-api {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-deepseek-api {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-flutterflow {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-github-actions {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-github-pages {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-html {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-javascript {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-markdown {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-nano-banana-api {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-perplexity-ai {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-python {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-supabase {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-trae-ide {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-vs-code {
     background-color: #4a6cf7;
     color: #ffffff;
 }
